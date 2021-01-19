@@ -105,6 +105,10 @@ internal extension MessagesViewController {
             messagesCollectionView.setContentOffset(contentOffset, animated: false)
         }
 
+        guard messageCollectionViewBottomInset != newBottomInset else {
+            return
+        }
+        
         UIView.performWithoutAnimation {
             messageCollectionViewBottomInset = newBottomInset
         }
